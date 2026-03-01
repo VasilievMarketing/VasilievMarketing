@@ -1,21 +1,34 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="Никита Васильев — performance-маркетолог для инфобизнеса. Strategy-сессия 20 минут бесплатно. KPI, аналитика, системные тесты." />
+  <meta name="theme-color" content="#0b0c10" />
   <title>Никита Васильев — Performance маркетолог для инфобизнеса</title>
+
+  <!-- OpenGraph (чтобы красиво шарилось в TG) -->
+  <meta property="og:title" content="Никита Васильев — Performance маркетолог для инфобизнеса" />
+  <meta property="og:description" content="Стабилизирую лидоген на вебинар/запуск через KPI, аналитику и системные тесты. Бесплатная strategy-сессия." />
+  <meta property="og:type" content="website" />
 
   <!-- Premium font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Subtle cursor glow -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__bar"></div>
+  </div>
+
   <!-- Top header -->
   <header class="header">
     <div class="container header__row">
@@ -39,7 +52,7 @@
 
   <main id="top">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero reveal">
       <div class="container hero__grid">
         <div class="hero__left">
           <p class="badge">Инфобиз • 4+ года в performance • KPI до старта</p>
@@ -77,7 +90,7 @@
           </div>
         </div>
 
-        <aside class="hero__right">
+        <aside class="hero__right reveal">
           <div class="card card--glow">
             <h3 class="h3">Кому я подхожу</h3>
             <ul class="list">
@@ -101,7 +114,7 @@
     </section>
 
     <!-- Proof bar -->
-    <section class="section section--tight">
+    <section class="section section--tight reveal">
       <div class="container">
         <div class="grid3">
           <div class="card">
@@ -121,7 +134,7 @@
     </section>
 
     <!-- How to get the session -->
-    <section id="howto" class="section">
+    <section id="howto" class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2 class="h2">Как попасть на strategy-сессию</h2>
@@ -149,7 +162,7 @@
     </section>
 
     <!-- What they get -->
-    <section class="section">
+    <section class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2 class="h2">Что вы получите после strategy-сессии</h2>
@@ -180,7 +193,7 @@
     </section>
 
     <!-- Tools / Stack -->
-    <section class="section">
+    <section class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2 class="h2">Инструменты, с которыми работаю</h2>
@@ -201,7 +214,7 @@
     </section>
 
     <!-- About -->
-    <section class="section section--tight">
+    <section class="section section--tight reveal">
       <div class="container">
         <div class="card">
           <h2 class="h2">Коротко обо мне</h2>
@@ -214,7 +227,7 @@
     </section>
 
     <!-- CASES -->
-    <section id="cases" class="section">
+    <section id="cases" class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2 class="h2">Кейсы</h2>
@@ -222,6 +235,7 @@
         </div>
 
         <div class="accordion">
+          <!-- CASE 1 -->
           <details class="acc card">
             <summary class="acc__sum">
               <div class="acc__title">
@@ -240,6 +254,7 @@
               </div>
             </summary>
             <div class="acc__body">
+              <div class="acc__divider" aria-hidden="true"></div>
               <p class="p muted">
                 Когда я подключился, запуск жил “на ощущениях”: креативы менялись хаотично, аудитории пересекались, а показатели прыгали так,
                 что невозможно было понять, что именно даёт результат. Я начал с базового, но редкого шага — разложил воронку по этапам и закрепил
@@ -257,6 +272,7 @@
             </div>
           </details>
 
+          <!-- CASE 2 -->
           <details class="acc card">
             <summary class="acc__sum">
               <div class="acc__title">
@@ -275,6 +291,7 @@
               </div>
             </summary>
             <div class="acc__body">
+              <div class="acc__divider" aria-hidden="true"></div>
               <p class="p muted">
                 Задача была не “сделать трафик”, а построить систему, которая приносит заявки без привязки к конкретной дате запуска.
                 Я начал с упаковки входа: лид-магнит должен был не просто собирать подписчиков, а сразу фильтровать людей под нужный уровень запроса.
@@ -291,6 +308,7 @@
             </div>
           </details>
 
+          <!-- CASE 3 -->
           <details class="acc card">
             <summary class="acc__sum">
               <div class="acc__title">
@@ -309,6 +327,7 @@
               </div>
             </summary>
             <div class="acc__body">
+              <div class="acc__divider" aria-hidden="true"></div>
               <p class="p muted">
                 Во многих инфопроектах самая дорогая ошибка — бесконечно покупать холодную аудиторию, когда деньги уже лежат в базе:
                 кто-то смотрел вебинар, кто-то начинал оплату, кто-то задавал вопросы и пропал. Я начал с разметки и сегментации базы по поведению:
@@ -321,6 +340,7 @@
             </div>
           </details>
 
+          <!-- CASE 4 -->
           <details class="acc card">
             <summary class="acc__sum">
               <div class="acc__title">
@@ -339,6 +359,7 @@
               </div>
             </summary>
             <div class="acc__body">
+              <div class="acc__divider" aria-hidden="true"></div>
               <p class="p muted">
                 На высоком чеке “дешёвый лид” часто становится ловушкой: приходит много людей, которые не покупают, и отдел продаж выгорает.
                 Здесь я строил систему вокруг качества: переработал входной оффер, добавил квалификацию через квиз и оптимизировал кампании
@@ -351,6 +372,7 @@
             </div>
           </details>
 
+          <!-- CASE 5 -->
           <details class="acc card">
             <summary class="acc__sum">
               <div class="acc__title">
@@ -369,6 +391,7 @@
               </div>
             </summary>
             <div class="acc__body">
+              <div class="acc__divider" aria-hidden="true"></div>
               <p class="p muted">
                 “Слив бюджета” почти всегда происходит из-за структуры: пересечения аудиторий, нет контроля частоты, креативы выгорают,
                 события не размечены, оптимизация идёт вслепую. Я пересобрал кабинет, вычистил пересечения, переразметил события и
@@ -385,7 +408,7 @@
     </section>
 
     <!-- Process -->
-    <section id="process" class="section">
+    <section id="process" class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2 class="h2">Как я веду проекты</h2>
@@ -410,7 +433,7 @@
           </div>
         </div>
 
-        <div class="card cta">
+        <div class="card cta reveal">
           <h3 class="h3">Готов обсудить ваш проект</h3>
           <p class="p muted">Нажмите кнопку ниже и напишите “СТРАТЕГИЯ” — я задам 5 вопросов и предложу время.</p>
           <a class="btn btn--primary" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener">
@@ -422,7 +445,7 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section">
+    <section id="faq" class="section reveal">
       <div class="container">
         <div class="section__head">
           <h2 class="h2">FAQ</h2>
@@ -472,7 +495,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
