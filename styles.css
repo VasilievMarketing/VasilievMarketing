@@ -915,8 +915,13 @@ b{font-weight:700}
    ✅ iOS Safari FIXES — “ghost lines” / “stuck seams” on scroll
    (Most stable setup)
    ========================================================= */
+/* =========================================================
+   ✅ iOS Safari FIXES — “ghost lines” / “stuck seams” on scroll
+   Самый стабильный вариант: убираем backdrop-filter + псевдо-слои
+   ========================================================= */
 
 @supports (-webkit-touch-callout: none) {
+  /* 1) Принудительно отдельные слои */
   .header,
   .progress,
   .progress__bar,
@@ -924,8 +929,8 @@ b{font-weight:700}
   .sticky-cta,
   .grain,
   .cursor-glow,
-  .divider,
-  .glass {
+  .glass,
+  .orb {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -933,20 +938,42 @@ b{font-weight:700}
     will-change: transform;
   }
 
-  /* Самый частый источник “залипаний” — тонкий 1px divider.
-     Самое стабильное решение: скрыть dividers на iOS. */
-  .divider { display: none; }
+  /* 2) Убираем главного виновника: blur-стекло */
+  .glass,
+  .header,
+  .sticky-cta,
+  .progress-pill {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
 
-  /* Grain (mix-blend-mode) иногда оставляет следы — упрощаем на iOS */
+  /* 3) Убираем псевдо-слои на стекле (они часто оставляют "швы") */
+  .glass::before,
+  .glass::after {
+    display: none !important;
+  }
+
+  /* 4) Делаем “премиум стекло” без blur: плотный фон + мягкий градиент */
+  .glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.045)
+    ) !important;
+    border-color: rgba(255,255,255,.14) !important;
+  }
+
+  /* 5) Grain: упрощаем (mix-blend-mode иногда даёт артефакты) */
   .grain{
-    mix-blend-mode: normal;
-    opacity: .06;
+    mix-blend-mode: normal !important;
+    opacity: .05 !important;
+  }
+
+  /* 6) Самый частый источник линий — 1px разделители. Отключаем на iOS */
+  .divider { display: none !important; }
+
+  /* 7) На всякий: фикс “линий” внутри элементов с радиусом */
+  .glass {
+    background-clip: padding-box;
   }
 }
-
-/* Если хочешь оставить dividers на iOS — удали .divider {display:none;}
-   и раскомментируй это:
-@supports (-webkit-touch-callout: none) {
-  .divider { display:block; height:2px; opacity:.55; }
-}
-*/
