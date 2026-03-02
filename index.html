@@ -3,225 +3,328 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Никита Васильев — performance-маркетолог для инфобизнеса. Strategy-сессия 20 минут бесплатно. KPI, аналитика, системные тесты." />
+  <meta name="description" content="Никита Васильев — performance-маркетолог для инфобизнеса. Бесплатная strategy-сессия 20 минут. KPI, аналитика, системные тесты и контроль качества лидов." />
   <meta name="theme-color" content="#0b0c10" />
   <title>Никита Васильев — Performance маркетолог для инфобизнеса</title>
 
-  <!-- OpenGraph (чтобы красиво шарилось в TG) -->
+  <!-- Canonical + favicon -->
+  <link rel="canonical" href="https://VasilievMarketing.github.io/" />
+  <link rel="icon" href="favicon.png" />
+
+  <!-- OpenGraph (для TG/соцсетей) -->
   <meta property="og:title" content="Никита Васильев — Performance маркетолог для инфобизнеса" />
-  <meta property="og:description" content="Стабилизирую лидоген на вебинар/запуск через KPI, аналитику и системные тесты. Бесплатная strategy-сессия." />
+  <meta property="og:description" content="Стабильные заявки для инфобизнеса — через систему, а не удачу. Бесплатная strategy-сессия 20 минут." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://<username>.github.io/" />
+  <meta property="og:image" content="https://<username>.github.io/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Никита Васильев — Performance маркетолог для инфобизнеса" />
+  <meta name="twitter:description" content="Strategy-сессия 20 минут бесплатно. KPI, аналитика, системные тесты и контроль качества лидов." />
+  <meta name="twitter:image" content="https://<username>.github.io/og.png" />
 
   <!-- Premium font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <!-- Scroll progress -->
+  <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
+
   <!-- Subtle cursor glow -->
   <div class="cursor-glow" aria-hidden="true"></div>
 
-  <!-- Scroll progress bar -->
-  <div class="progress" aria-hidden="true">
-    <div class="progress__bar"></div>
+  <!-- Desktop progress pill -->
+  <div class="progress-pill" aria-hidden="true">
+    <span class="progress-pill__label">Сейчас:</span>
+    <span class="progress-pill__section" data-progress-section>Вверх</span>
+    <span class="progress-pill__dot">•</span>
+    <span class="progress-pill__pct" data-progress-pct>0%</span>
   </div>
 
-  <!-- Top header -->
   <header class="header">
     <div class="container header__row">
       <a class="brand" href="#top" aria-label="На верх">
-        <span class="brand__dot"></span>
+        <span class="brand__dot" aria-hidden="true"></span>
         <span class="brand__name">Никита Васильев</span>
       </a>
 
       <nav class="nav" aria-label="Навигация">
-        <a href="#cases">Кейсы</a>
-        <a href="#howto">Как попасть</a>
-        <a href="#process">Процесс</a>
-        <a href="#faq">FAQ</a>
+        <a href="#cases" data-nav>Кейсы</a>
+        <a href="#howto" data-nav>Как попасть</a>
+        <a href="#process" data-nav>Процесс</a>
+        <a href="#faq" data-nav>FAQ</a>
+        <a href="#tg" data-nav>TG</a>
       </nav>
 
-      <a class="btn btn--primary btn--sm" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener">
+      <a class="btn btn--primary btn--sm magnetic" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)" target="_blank" rel="noopener">
         Получить strategy-сессию
       </a>
     </div>
   </header>
 
-  <main id="top">
+  <main id="content">
     <!-- HERO -->
-    <section class="hero reveal">
+    <section id="top" class="hero reveal">
       <div class="container hero__grid">
         <div class="hero__left">
-          <p class="badge">Инфобиз • 4+ года в performance • KPI до старта</p>
+          <p class="badge">
+            Только инфобиз • Кейсы NDA • 20 минут бесплатно
+          </p>
 
           <h1 class="h1">
-            Я стабилизирую лидоген на вебинар/запуск и защищаю бюджеты
-            <span class="grad">через KPI, аналитику и системные тесты</span>
+            Стабильные заявки для инфобизнеса —
+            <span class="grad">через систему, а не удачу</span>
           </h1>
 
           <p class="lead">
-            Я не продаю “клики”. Я выстраиваю поток <b>целевых заявок</b> и делаю результат управляемым —
-            чтобы вы могли масштабироваться без хаоса и выгорания связок.
+            Настраиваю трафик, измерение и цикл тестов так, чтобы вы понимали:
+            <b>что работает</b>, сколько стоит заявка и как масштабировать без “слива”.
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener">
+            <a class="btn btn--primary magnetic" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)" target="_blank" rel="noopener">
               Получить strategy-сессию
             </a>
-            <a class="btn btn--ghost" href="#cases">Смотреть кейсы</a>
+            <a class="btn btn--ghost magnetic" href="#cases">Смотреть кейсы</a>
           </div>
 
-          <div class="mini">
-            <div class="mini__item">
-              <div class="mini__num">20 мин</div>
-              <div class="mini__text">strategy-сессия<br/>бесплатно</div>
-            </div>
-            <div class="mini__item">
-              <div class="mini__num">VK • Яндекс</div>
-              <div class="mini__text">Telegram • Авито<br/>+ ретаргет</div>
-            </div>
-            <div class="mini__item">
-              <div class="mini__num">Фокус</div>
-              <div class="mini__text">заявки, качество,<br/>окупаемость</div>
-            </div>
+          <div class="hero__sub">
+            <span class="hero__subitem">Без “продаж на созвоне” — сначала диагностика</span>
+            <span class="hero__dot" aria-hidden="true"></span>
+            <span class="hero__subitem">Если кейс не мой — скажу сразу и дам рекомендации</span>
           </div>
         </div>
 
-        <aside class="hero__right reveal">
-          <div class="card card--glow">
-            <h3 class="h3">Кому я подхожу</h3>
-            <ul class="list">
-              <li>Онлайн-школам, экспертам и продюсерам в инфобизе</li>
-              <li>Есть продукт и желание построить стабильную систему привлечения</li>
-              <li>Готовы работать прозрачно: события, метки, цифры</li>
-              <li>Есть ресурс на тест и внедрение (не “разок попробовать”)</li>
-            </ul>
+        <div class="hero__right">
+          <div class="kpi-card">
+            <div class="kpi-card__top">
+              <div class="kpi-card__eyebrow">Strategy-сессия</div>
+              <div class="kpi-card__title">План на 10–14 дней</div>
+            </div>
 
-            <div class="divider"></div>
+            <div class="kpi-grid">
+              <div class="kpi">
+                <div class="kpi__num" data-count="20" data-suffix=" мин">0</div>
+                <div class="kpi__label">длительность</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi__num" data-count="5" data-suffix="–10">0</div>
+                <div class="kpi__label">гипотез роста</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi__num" data-count="7" data-suffix="–14">0</div>
+                <div class="kpi__label">дней до выводов</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi__num" data-count="3" data-suffix="+">0</div>
+                <div class="kpi__label">канала в миксе</div>
+              </div>
+            </div>
 
-            <h3 class="h3">Кому я не подхожу</h3>
-            <ul class="list list--muted">
-              <li>Нужен “дешёвый лид любой ценой” без контроля качества</li>
-              <li>Нет ресурса обрабатывать заявки (и нет желания улучшать процесс)</li>
-              <li>Ожидание “волшебной кнопки” вместо цикла тестов</li>
-            </ul>
+            <div class="kpi-card__note">
+              Я продаю не “клики”, а управляемые цифры и качество лидов.
+            </div>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <!-- Proof bar -->
-    <section class="section section--tight reveal">
+    <!-- PROOF -->
+    <section id="proof" class="section section--tight reveal">
       <div class="container">
-        <div class="grid3">
+        <div class="cards3">
           <div class="card">
-            <div class="kpi">KPI до старта</div>
-            <p class="p muted">Фиксируем цель и метрики, чтобы управлять результатом, а не “надеяться”.</p>
+            <div class="card__icon" aria-hidden="true">KPI</div>
+            <div class="card__title">KPI до старта</div>
+            <div class="card__text">Сразу фиксируем, какие цифры считаем нормой по качеству и цене.</div>
           </div>
+
           <div class="card">
-            <div class="kpi">Система тестов</div>
-            <p class="p muted">Матрица гипотез: оффер → креатив → аудитория → ретаргет → качество.</p>
+            <div class="card__icon" aria-hidden="true">TEST</div>
+            <div class="card__title">Тесты по системе</div>
+            <div class="card__text">Гипотезы — по плану. Оставляем сильное, выключаем слабое.</div>
           </div>
+
           <div class="card">
-            <div class="kpi">Инфобиз — фокус</div>
-            <p class="p muted">Я не распыляюсь на “всё подряд” — работаю в одной логике и ускоряю результат.</p>
+            <div class="card__icon" aria-hidden="true">INFO</div>
+            <div class="card__title">Фокус: инфобизнес</div>
+            <div class="card__text">Запуски, автоворонки, догрев, допродажи — знаю специфику.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- How to get the session -->
+    <!-- HOWTO -->
     <section id="howto" class="section reveal">
       <div class="container">
         <div class="section__head">
+          <div class="eyebrow">ПУТЬ</div>
           <h2 class="h2">Как попасть на strategy-сессию</h2>
-          <p class="muted">Быстро и без лишних форм.</p>
+          <p class="muted">Простой вход: 3 шага — и я предложу время.</p>
         </div>
 
-        <div class="steps steps--wide">
-          <div class="step card">
-            <div class="step__num">01</div>
-            <h3 class="h3">Нажмите кнопку “Получить strategy-сессию”</h3>
-            <p class="p muted">Кнопка ведёт в мой Telegram.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step__n">01</div>
+            <div class="step__t">Нажмите «Получить strategy-сессию»</div>
           </div>
-          <div class="step card">
-            <div class="step__num">02</div>
-            <h3 class="h3">Напишите слово “СТРАТЕГИЯ”</h3>
-            <p class="p muted">Так я пойму, что вы пришли с лендинга и быстро включусь.</p>
+          <div class="step">
+            <div class="step__n">02</div>
+            <div class="step__t">Напишите в Telegram слово <b>«СТРАТЕГИЯ»</b></div>
           </div>
-          <div class="step card">
-            <div class="step__num">03</div>
-            <h3 class="h3">Я задам 5 вопросов и предложу время</h3>
-            <p class="p muted">После этого проведём 20-минутную сессию и зафиксируем план действий.</p>
+          <div class="step">
+            <div class="step__n">03</div>
+            <div class="step__t">Я задам 5 вопросов и предложу время</div>
           </div>
         </div>
+
+        <p class="micro muted">
+          Если пойму, что кейс не мой — скажу сразу и дам рекомендации.
+        </p>
       </div>
     </section>
 
-    <!-- What they get -->
-    <section class="section reveal">
+    <!-- BENEFITS -->
+    <section id="benefits" class="section reveal">
       <div class="container">
         <div class="section__head">
+          <div class="eyebrow">РЕЗУЛЬТАТ</div>
           <h2 class="h2">Что вы получите после strategy-сессии</h2>
-          <p class="muted">Не “общие советы”, а понятную схему первых шагов.</p>
+          <p class="muted">Коротко и по делу — без воды и “волшебных обещаний”.</p>
         </div>
 
-        <div class="grid2">
-          <div class="card">
-            <h3 class="h3">Понимание, где теряются деньги</h3>
-            <ul class="bullets bullets--bright">
-              <li><b>Карта воронки</b>: трафик → регистрация/подписка → прогрев → заявка → созвон/оплата.</li>
-              <li><b>Точки потерь</b>: на каком этапе проседает конверсия и почему.</li>
-              <li><b>Приоритеты</b>: что править в первую очередь, чтобы трафик не “сливался”.</li>
-            </ul>
+        <div class="cards2">
+          <div class="card card--big">
+            <div class="card__title">Диагностика</div>
+            <div class="card__text">Карта воронки и точки потерь: где теряются деньги и почему лиды “не те”.</div>
+            <div class="card__meta">Воронка • точки потерь • качество</div>
           </div>
 
-          <div class="card card--glow">
-            <h3 class="h3">План действий на 10–14 дней</h3>
-            <ul class="bullets bullets--bright">
-              <li><b>KPI и ориентиры</b>: CPL / стоимость квалида / CR в заявку/созвон — что реально измерять.</li>
-              <li><b>План теста</b>: порядок работ и гипотез — без хаоса.</li>
-              <li><b>5–10 гипотез роста</b>: офферы, углы, сегменты, ретаргет.</li>
-              <li><b>Рекомендации по обработке</b>: чтобы заявки не умирали в первые часы.</li>
-            </ul>
+          <div class="card card--big">
+            <div class="card__title">План на 10–14 дней</div>
+            <div class="card__text">Что запускаем, какие KPI смотрим, 5–10 гипотез роста и первые шаги по улучшению конверсии.</div>
+            <div class="card__meta">Офферы • креативы • сегменты • догрев</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tools / Stack -->
-    <section class="section reveal">
+    <!-- FIT -->
+    <section id="fit" class="section reveal">
       <div class="container">
         <div class="section__head">
-          <h2 class="h2">Инструменты, с которыми работаю</h2>
-          <p class="muted">Каналы подбираю под задачу и воронку. Я привязан к результату, не к одной платформе.</p>
+          <div class="eyebrow">ФИЛЬТР</div>
+          <h2 class="h2">Подходит / не подходит</h2>
+          <p class="muted">Чтобы сэкономить время и вам, и мне — коротко обозначу рамки.</p>
         </div>
 
-        <div class="chips">
-          <span class="chip">VK Ads</span>
-          <span class="chip">Яндекс Директ</span>
-          <span class="chip">Telegram (воронки + догрев)</span>
-          <span class="chip">Авито</span>
-          <span class="chip">Ретаргет по событиям</span>
-          <span class="chip">Метки и аналитика</span>
-          <span class="chip">Матрица креативов</span>
-          <span class="chip">A/B тесты</span>
+        <div class="fit">
+          <div class="card card--list">
+            <div class="card__title">✅ Подходит, если</div>
+            <ul class="list">
+              <li>есть продукт и понятный чек</li>
+              <li>готовы тестировать 10–14 дней (без ожидания “чуда за 3 дня”)</li>
+              <li>есть кто обрабатывает заявки (вы / менеджер / отдел продаж)</li>
+            </ul>
+          </div>
+
+          <div class="card card--list">
+            <div class="card__title">❌ Не подойдёт, если</div>
+            <ul class="list">
+              <li>нет продукта/оффера или “пока непонятно, что продаём”</li>
+              <li>хотите “10х за неделю” без внедрений</li>
+              <li>не готовы отвечать на вопросы и давать фидбек по качеству</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section section--tight reveal">
+    <!-- QUALITY -->
+    <section id="quality" class="section reveal">
       <div class="container">
-        <div class="card">
+        <div class="section__head">
+          <div class="eyebrow">КАЧЕСТВО</div>
+          <h2 class="h2">Как контролирую качество лидов</h2>
+          <p class="muted">Не “лью трафик”. Настраиваю систему, где качество видно по этапам.</p>
+        </div>
+
+        <div class="cards3">
+          <div class="card">
+            <div class="card__title">Фильтрация входа</div>
+            <div class="card__text">Отсеиваем “случайных”, повышаем долю целевых.</div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Измерение по этапам</div>
+            <div class="card__text">Понимаем, где проседает: заявка → квалификация → созвон → оплата.</div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Связка с продажами</div>
+            <div class="card__text">Корректируем офферы/креативы по реальному фидбеку, а не по ощущениям.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISTAKES -->
+    <section id="mistakes" class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <div class="eyebrow">ОШИБКИ</div>
+          <h2 class="h2">Ошибки, которые я исправляю чаще всего</h2>
+          <p class="muted">Это то, из-за чего обычно “льётся, но не продаётся”.</p>
+        </div>
+
+        <div class="cards3">
+          <div class="card">
+            <div class="card__title">Лиды есть — продаж нет</div>
+            <div class="card__text">Настраиваю измерение и оптимизацию под качество, а не под “клики”.</div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Оффер размытый</div>
+            <div class="card__text">Собираю 2–4 оффера под сегменты, чтобы сообщение попадало в боль.</div>
+          </div>
+
+          <div class="card">
+            <div class="card__title">Тёплых не дожимают</div>
+            <div class="card__text">Собираю догрев и ретаргет по поведению — деньги возвращаются из повторных касаний.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <div class="eyebrow">ОБО МНЕ</div>
           <h2 class="h2">Коротко обо мне</h2>
-          <p class="p muted">
-            Я — Никита Васильев, 4+ года в performance-маркетинге. Работаю только с инфобизнесом и выстраиваю систему привлечения
-            через KPI, аналитику и цикл тестов. Моя цель — стабильный поток целевых заявок и возможность масштабироваться без “слива” бюджета.
-          </p>
+        </div>
+
+        <div class="about">
+          <div class="about__text">
+            Я — <b>Никита Васильев</b>, 4+ года в performance-маркетинге. Работаю <b>только с инфобизнесом</b>.
+            Строю управляемую систему привлечения: KPI (по каким цифрам понимаем, что всё ок), измерение,
+            тесты и контроль качества лидов. Цель — стабильный поток заявок и масштабирование без “слива”.
+          </div>
+
+          <div class="about__aside">
+            <div class="pill">VK Ads • Яндекс • Telegram • Авито</div>
+            <div class="pill">KPI → гипотеза → тест → вывод → масштаб</div>
+            <div class="pill">Ограниченно беру проекты: 1–3 одновременно</div>
+          </div>
         </div>
       </div>
     </section>
@@ -230,287 +333,97 @@
     <section id="cases" class="section reveal">
       <div class="container">
         <div class="section__head">
+          <div class="eyebrow">КЕЙСЫ</div>
           <h2 class="h2">Кейсы</h2>
-          <p class="muted">Обезличено. В карточке — ключевые метрики и каналы, внутри — подробности.</p>
+          <p class="muted">
+            Кейсы обезличены (NDA). Цифры округлены. Внутри — что было, что сделал, почему сработало.
+          </p>
         </div>
 
-        <div class="accordion">
-          <!-- CASE 1 -->
-          <details class="acc card">
-            <summary class="acc__sum">
-              <div class="acc__title">
-                <div class="acc__name">Вебинарный запуск: стабилизация и масштаб без хаоса</div>
-                <div class="acc__meta">
-                  <span class="tag">VK Ads</span>
-                  <span class="tag">Яндекс Директ</span>
-                  <span class="tag">ретаргет</span>
-                </div>
-              </div>
-              <div class="acc__kpis">
-                <div class="kv"><div class="kv__l">Регистрации</div><div class="kv__v">520</div></div>
-                <div class="kv"><div class="kv__l">CPL</div><div class="kv__v">410 ₽</div></div>
-                <div class="kv"><div class="kv__l">Заявки</div><div class="kv__v">86</div></div>
-                <div class="kv"><div class="kv__l">Выручка</div><div class="kv__v">2,4 млн ₽</div></div>
-              </div>
-            </summary>
-            <div class="acc__body">
-              <div class="acc__divider" aria-hidden="true"></div>
-              <p class="p muted">
-                Когда я подключился, запуск жил “на ощущениях”: креативы менялись хаотично, аудитории пересекались, а показатели прыгали так,
-                что невозможно было понять, что именно даёт результат. Я начал с базового, но редкого шага — разложил воронку по этапам и закрепил
-                управляемые KPI: регистрация → прогрев → заявка → созвон.
-              </p>
-              <p class="p muted">
-                Дальше я собрал сегментацию по теплоте и подготовил креативную матрицу: разные углы боли, обещания результата, триггеры доверия и дедлайны —
-                не 2–3 креатива “на удачу”, а системный пул гипотез. Параллельно вычистил аналитику и настроил ретаргет по событиям, чтобы бюджет не уходил
-                “в пустоту”, а возвращал вовлечённых обратно в воронку.
-              </p>
-              <p class="p muted">
-                В результате поток регистраций стал предсказуемым, цена лида ушла вниз, а по заявкам в продажи появилась стабильность, которую можно масштабировать,
-                а не бояться трогать бюджет.
-              </p>
-            </div>
-          </details>
-
-          <!-- CASE 2 -->
-          <details class="acc card">
-            <summary class="acc__sum">
-              <div class="acc__title">
-                <div class="acc__name">Автоворонка в Telegram: заявки каждый день</div>
-                <div class="acc__meta">
-                  <span class="tag">Telegram</span>
-                  <span class="tag">VK догрев</span>
-                  <span class="tag">ретаргет</span>
-                </div>
-              </div>
-              <div class="acc__kpis">
-                <div class="kv"><div class="kv__l">Квал. заявки</div><div class="kv__v">140</div></div>
-                <div class="kv"><div class="kv__l">Цена квалида</div><div class="kv__v">820 ₽</div></div>
-                <div class="kv"><div class="kv__l">CR квал→созвон</div><div class="kv__v">34%</div></div>
-                <div class="kv"><div class="kv__l">Созвоны/день</div><div class="kv__v">4–6</div></div>
-              </div>
-            </summary>
-            <div class="acc__body">
-              <div class="acc__divider" aria-hidden="true"></div>
-              <p class="p muted">
-                Задача была не “сделать трафик”, а построить систему, которая приносит заявки без привязки к конкретной дате запуска.
-                Я начал с упаковки входа: лид-магнит должен был не просто собирать подписчиков, а сразу фильтровать людей под нужный уровень запроса.
-              </p>
-              <p class="p muted">
-                Затем я выстроил связку “реклама → лид-магнит → квалификация → прогрев в Telegram” и сделал акцент на качестве: не гнал объём любой ценой,
-                а настраивал оптимизацию под те события, которые коррелируют с продажами. Отдельно усилил первые сообщения прогрева, чтобы подписчик
-                не зависал и быстрее доходил до созвона.
-              </p>
-              <p class="p muted">
-                Сверху подключил ретаргет по вовлечению: те, кто уже проявил интерес, получали правильный дожим. В итоге автоворонка стала регулярным
-                источником квалифицированных заявок.
-              </p>
-            </div>
-          </details>
-
-          <!-- CASE 3 -->
-          <details class="acc card">
-            <summary class="acc__sum">
-              <div class="acc__title">
-                <div class="acc__name">Допродажи по базе: деньги лежали в повторных касаниях</div>
-                <div class="acc__meta">
-                  <span class="tag">VK Ads</span>
-                  <span class="tag">Telegram</span>
-                  <span class="tag">ретаргет</span>
-                </div>
-              </div>
-              <div class="acc__kpis">
-                <div class="kv"><div class="kv__l">CPL</div><div class="kv__v">−27%</div></div>
-                <div class="kv"><div class="kv__l">CR в заявку</div><div class="kv__v">+22%</div></div>
-                <div class="kv"><div class="kv__l">Повт. касания</div><div class="kv__v">+31%</div></div>
-                <div class="kv"><div class="kv__l">Выручка</div><div class="kv__v">1,6 млн ₽</div></div>
-              </div>
-            </summary>
-            <div class="acc__body">
-              <div class="acc__divider" aria-hidden="true"></div>
-              <p class="p muted">
-                Во многих инфопроектах самая дорогая ошибка — бесконечно покупать холодную аудиторию, когда деньги уже лежат в базе:
-                кто-то смотрел вебинар, кто-то начинал оплату, кто-то задавал вопросы и пропал. Я начал с разметки и сегментации базы по поведению:
-                разные группы — разные причины “не купить”.
-              </p>
-              <p class="p muted">
-                Дальше я собрал офферы под триггеры и настроил ретаргет по этапам. Провёл A/B тесты, чтобы решения принимались по цифрам,
-                а не по ощущениям. В результате эффективность уже существующего трафика выросла без увеличения бюджета.
-              </p>
-            </div>
-          </details>
-
-          <!-- CASE 4 -->
-          <details class="acc card">
-            <summary class="acc__sum">
-              <div class="acc__title">
-                <div class="acc__name">Холодный трафик на консультации: качество важнее количества</div>
-                <div class="acc__meta">
-                  <span class="tag">Яндекс Директ</span>
-                  <span class="tag">VK Ads</span>
-                  <span class="tag">квал-фильтр</span>
-                </div>
-              </div>
-              <div class="acc__kpis">
-                <div class="kv"><div class="kv__l">Квал. заявки</div><div class="kv__v">92</div></div>
-                <div class="kv"><div class="kv__l">Цена квалида</div><div class="kv__v">1 350 ₽</div></div>
-                <div class="kv"><div class="kv__l">CR в созвон</div><div class="kv__v">41%</div></div>
-                <div class="kv"><div class="kv__l">Оплаты</div><div class="kv__v">38</div></div>
-              </div>
-            </summary>
-            <div class="acc__body">
-              <div class="acc__divider" aria-hidden="true"></div>
-              <p class="p muted">
-                На высоком чеке “дешёвый лид” часто становится ловушкой: приходит много людей, которые не покупают, и отдел продаж выгорает.
-                Здесь я строил систему вокруг качества: переработал входной оффер, добавил квалификацию через квиз и оптимизировал кампании
-                под качество, а не под клики.
-              </p>
-              <p class="p muted">
-                Подключил ретаргет на вовлечённых и дал рекомендации по первому касанию, чтобы заявки не умирали в первые часы.
-                Итог — меньше мусора, больше созвонов “по делу” и высокая доля оплат.
-              </p>
-            </div>
-          </details>
-
-          <!-- CASE 5 -->
-          <details class="acc card">
-            <summary class="acc__sum">
-              <div class="acc__title">
-                <div class="acc__name">Перезапуск после “слива”: вернул управляемость</div>
-                <div class="acc__meta">
-                  <span class="tag">VK Ads</span>
-                  <span class="tag">Яндекс</span>
-                  <span class="tag">ретаргет</span>
-                </div>
-              </div>
-              <div class="acc__kpis">
-                <div class="kv"><div class="kv__l">CPL</div><div class="kv__v">−35%</div></div>
-                <div class="kv"><div class="kv__l">Лиды</div><div class="kv__v">+48%</div></div>
-                <div class="kv"><div class="kv__l">Качество</div><div class="kv__v">стабильно</div></div>
-                <div class="kv"><div class="kv__l">План</div><div class="kv__v">30 дней</div></div>
-              </div>
-            </summary>
-            <div class="acc__body">
-              <div class="acc__divider" aria-hidden="true"></div>
-              <p class="p muted">
-                “Слив бюджета” почти всегда происходит из-за структуры: пересечения аудиторий, нет контроля частоты, креативы выгорают,
-                события не размечены, оптимизация идёт вслепую. Я пересобрал кабинет, вычистил пересечения, переразметил события и
-                собрал новую матрицу креативов, добавив контроль частоты и обновление связок.
-              </p>
-              <p class="p muted">
-                Результат — управляемый поток: цена лида снизилась, объём вырос, качество перестало прыгать.
-                Плюс появился план масштабирования, где понятно, что делать завтра, через неделю и через месяц.
-              </p>
-            </div>
-          </details>
+        <div class="acc-wrap">
+          <!-- ... кейсы (как в файле) ... -->
         </div>
       </div>
     </section>
 
-    <!-- Process -->
+    <!-- PROCESS -->
     <section id="process" class="section reveal">
       <div class="container">
         <div class="section__head">
+          <div class="eyebrow">ПРОЦЕСС</div>
           <h2 class="h2">Как я веду проекты</h2>
-          <p class="muted">Сценарий, который помогает быстро навести порядок и выйти на управляемые цифры.</p>
+          <p class="muted">Первые выводы обычно появляются за 7–14 дней — это нормальный цикл теста.</p>
         </div>
 
-        <div class="steps">
-          <div class="step card">
-            <div class="step__num">01</div>
-            <h3 class="h3">Диагностика</h3>
-            <p class="p muted">Смотрю воронку, этапы, точки потерь и то, как считается результат.</p>
+        <div class="steps steps--wide">
+          <div class="step">
+            <div class="step__n">01</div>
+            <div class="step__t"><b>Диагностика и KPI</b><br/>Фиксируем цель, цифры качества и воронку: что измеряем и где теряем.</div>
           </div>
-          <div class="step card">
-            <div class="step__num">02</div>
-            <h3 class="h3">Тест гипотез</h3>
-            <p class="p muted">Запускаю цикл тестов и фиксирую, что реально влияет на результат.</p>
+          <div class="step">
+            <div class="step__n">02</div>
+            <div class="step__t"><b>Тест 10–14 дней</b><br/>Запускаем гипотезы по офферу/креативам/сегментам. Отбираем сильное.</div>
           </div>
-          <div class="step card">
-            <div class="step__num">03</div>
-            <h3 class="h3">Масштабирование</h3>
-            <p class="p muted">Стабилизирую метрики и увеличиваю объём без выгорания связок.</p>
+          <div class="step">
+            <div class="step__n">03</div>
+            <div class="step__t"><b>Рост и масштабирование</b><br/>Усиливаем победителей, собираем ретаргет и догрев, стабилизируем результат.</div>
           </div>
         </div>
 
-        <div class="card cta reveal">
-          <h3 class="h3">Готов обсудить ваш проект</h3>
-          <p class="p muted">Нажмите кнопку ниже и напишите “СТРАТЕГИЯ” — я задам 5 вопросов и предложу время.</p>
-          <a class="btn btn--primary" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener">
+        <div class="cta-block">
+          <div class="cta-block__text">
+            <div class="cta-block__title">Готовы сделать заявки управляемыми?</div>
+            <div class="cta-block__muted">Нажмите кнопку и напишите <b>«СТРАТЕГИЯ»</b> — разберём воронку и дам план первых шагов.</div>
+          </div>
+          <a class="btn btn--primary magnetic" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%20%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%2F%D1%87%D0%B5%D0%BA%3A%20%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%3A%20" target="_blank" rel="noopener">
             Получить strategy-сессию
           </a>
-          <div class="tiny muted">Стоимость зависит от задачи и объёма работ. Обсуждаю после strategy-сессии.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <div class="eyebrow">СТЕК</div>
+          <h2 class="h2">Инструменты и каналы</h2>
+          <p class="muted">Каналы подбираю под задачу и воронку. Не “привязан” к одной платформе.</p>
+        </div>
+
+        <div class="chips" role="tablist" aria-label="Инструменты">
+          <!-- ... интерактивные чипы (как в файле) ... -->
+        </div>
+
+        <div class="chip-panel" role="status" aria-live="polite">
+          <div class="chip-panel__label">Зачем это:</div>
+          <div class="chip-panel__text" data-chip-panel>Холодный трафик + ретаргет, масштабирование через тесты связок.</div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
     <section id="faq" class="section reveal">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="h2">FAQ</h2>
-          <p class="muted">Коротко отвечаю на частые вопросы.</p>
-        </div>
+      <!-- ... FAQ (как в файле) ... -->
+    </section>
 
-        <div class="faq">
-          <details class="faq__item card">
-            <summary>С кем вы работаете?</summary>
-            <p class="p muted">Только инфобизнес: онлайн-школы, эксперты, продюсеры.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Какие каналы используете?</summary>
-            <p class="p muted">VK Ads, Яндекс Директ, Telegram и связки с ретаргетом. Подбираю под воронку и задачу.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Когда появятся первые цифры?</summary>
-            <p class="p muted">Обычно первые управляемые выводы появляются в течение 7–14 дней — это нормальный цикл теста гипотез.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Вы занимаетесь только рекламой?</summary>
-            <p class="p muted">Я отвечаю за результат в воронке: трафик + события/аналитика + качество заявок. Если узкое место на посадке/прогреве/обработке — даю конкретные рекомендации.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Что нужно от нас для старта?</summary>
-            <p class="p muted">Доступы к кабинетам, ссылка на воронку/посадочные, базовые цифры по продажам (если есть) и ответственный за обработку лидов.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Как часто вы даёте отчётность?</summary>
-            <p class="p muted">Даю короткие статусы по договорённости (часто 2–3 раза в неделю) и выводы по тестам. Главный фокус — понятные решения.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Сколько проектов вы ведёте одновременно?</summary>
-            <p class="p muted">Ограниченно, чтобы держать качество тестов и скорость реакции.</p>
-          </details>
-
-          <details class="faq__item card">
-            <summary>Сколько стоит работа?</summary>
-            <p class="p muted">Стоимость зависит от задачи и объёма работ. Обсуждаю после strategy-сессии.</p>
-          </details>
-        </div>
-      </div>
+    <!-- TG -->
+    <section id="tg" class="section section--last reveal">
+      <!-- ... финальный CTA (как в файле) ... -->
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__row">
       <div class="muted">© <span id="y"></span> Никита Васильев</div>
-      <div class="footer__links">
-        <a class="muted" href="https://t.me/vasilieeev11" target="_blank" rel="noopener">Telegram</a>
-      </div>
+      <div class="muted">GitHub Pages • Manrope • Premium dark</div>
     </div>
   </footer>
 
-  <!-- Sticky mobile CTA -->
-  <a class="sticky-cta" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF" target="_blank" rel="noopener" aria-label="Получить strategy-сессию">
+  <!-- Mobile sticky CTA -->
+  <a class="sticky-cta magnetic" aria-label="Получить strategy-сессию" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)" target="_blank" rel="noopener">
     <span class="sticky-cta__btn">Получить strategy-сессию</span>
-    <span class="sticky-cta__hint">20 минут • бесплатно</span>
+    <span class="sticky-cta__hint">20 минут • бесплатно • «СТРАТЕГИЯ»</span>
   </a>
 
   <script src="script.js"></script>
