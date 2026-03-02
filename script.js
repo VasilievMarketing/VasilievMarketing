@@ -205,3 +205,16 @@
   });
 
 })();
+
+// Disable hover/touch-driven effects on mobile
+const isMobile = window.matchMedia('(max-width: 920px)').matches;
+if (isMobile) {
+  // remove tilt listeners effect by clearing transform
+  const tilt = document.querySelector('[data-tilt]');
+  if (tilt) tilt.style.transform = '';
+
+  // disable parallax orbs by removing transforms
+  document.querySelectorAll('[data-parallax]').forEach(o => {
+    o.style.transform = '';
+  });
+}
