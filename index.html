@@ -2,16 +2,16 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="description" content="Никита Васильев — performance-маркетолог для инфобизнеса. Бесплатная strategy-сессия 20 минут. KPI, аналитика, системные тесты и контроль качества лидов." />
   <meta name="theme-color" content="#0b0c10" />
   <title>Никита Васильев — Performance маркетолог для инфобизнеса</title>
 
-  <!-- Canonical + favicon -->
+  <!-- Replace <username> with your GitHub Pages domain -->
   <link rel="canonical" href="https://VasilievMarketing.github.io/" />
   <link rel="icon" href="favicon.png" />
 
-  <!-- OpenGraph (для TG/соцсетей) -->
+  <!-- OpenGraph (Telegram preview) -->
   <meta property="og:title" content="Никита Васильев — Performance маркетолог для инфобизнеса" />
   <meta property="og:description" content="Стабильные заявки для инфобизнеса — через систему, а не удачу. Бесплатная strategy-сессия 20 минут." />
   <meta property="og:type" content="website" />
@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="Strategy-сессия 20 минут бесплатно. KPI, аналитика, системные тесты и контроль качества лидов." />
   <meta name="twitter:image" content="https://<username>.github.io/og.png" />
 
-  <!-- Premium font -->
+  <!-- Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -39,7 +39,7 @@
   <!-- Scroll progress -->
   <div class="progress" aria-hidden="true"><div class="progress__bar"></div></div>
 
-  <!-- Subtle cursor glow -->
+  <!-- Cursor glow -->
   <div class="cursor-glow" aria-hidden="true"></div>
 
   <!-- Desktop progress pill -->
@@ -50,10 +50,13 @@
     <span class="progress-pill__pct" data-progress-pct>0%</span>
   </div>
 
-  <header class="header">
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header" id="topbar">
     <div class="container header__row">
-      <a class="brand" href="#top" aria-label="На верх">
-        <span class="brand__dot" aria-hidden="true"></span>
+      <a class="brand" href="#top" aria-label="Наверх">
+        <span class="brand__mark" aria-hidden="true"></span>
         <span class="brand__name">Никита Васильев</span>
       </a>
 
@@ -65,7 +68,9 @@
         <a href="#tg" data-nav>TG</a>
       </nav>
 
-      <a class="btn btn--primary btn--sm magnetic" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)" target="_blank" rel="noopener">
+      <a class="btn btn--primary btn--sm magnetic"
+         href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)"
+         target="_blank" rel="noopener">
         Получить strategy-сессию
       </a>
     </div>
@@ -73,15 +78,23 @@
 
   <main id="content">
     <!-- HERO -->
-    <section id="top" class="hero reveal">
+    <section id="top" class="hero section" data-section-label="Вверх">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="orb orb--a" data-parallax="0.12"></span>
+        <span class="orb orb--b" data-parallax="0.18"></span>
+        <span class="orb orb--c" data-parallax="0.08"></span>
+      </div>
+
       <div class="container hero__grid">
-        <div class="hero__left">
-          <p class="badge">
-            Только инфобиз • Кейсы NDA • 20 минут бесплатно
-          </p>
+        <div class="hero__left reveal">
+          <div class="badge-row">
+            <span class="badge">Только инфобиз</span>
+            <span class="badge badge--muted">Кейсы NDA</span>
+            <span class="badge badge--muted">20 минут бесплатно</span>
+          </div>
 
           <h1 class="h1">
-            Стабильные заявки для инфобизнеса —
+            Стабильные заявки для инфобизнеса —<br />
             <span class="grad">через систему, а не удачу</span>
           </h1>
 
@@ -91,80 +104,100 @@
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary magnetic" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)" target="_blank" rel="noopener">
+            <a class="btn btn--primary magnetic"
+               href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%20%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%2F%D1%87%D0%B5%D0%BA%3A%20%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%3A%20"
+               target="_blank" rel="noopener">
               Получить strategy-сессию
             </a>
             <a class="btn btn--ghost magnetic" href="#cases">Смотреть кейсы</a>
           </div>
 
-          <div class="hero__sub">
-            <span class="hero__subitem">Без “продаж на созвоне” — сначала диагностика</span>
-            <span class="hero__dot" aria-hidden="true"></span>
-            <span class="hero__subitem">Если кейс не мой — скажу сразу и дам рекомендации</span>
+          <div class="hero__micro">
+            <span>Без “продаж на созвоне” — сначала диагностика</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span>Если кейс не мой — скажу сразу и дам рекомендации</span>
           </div>
         </div>
 
-        <div class="hero__right">
-          <div class="kpi-card">
-            <div class="kpi-card__top">
-              <div class="kpi-card__eyebrow">Strategy-сессия</div>
+        <aside class="hero__right reveal">
+          <div class="glass kpi-card tilt hoverfx" data-tilt>
+            <div class="kpi-card__head">
+              <div class="eyebrow">Strategy-сессия</div>
               <div class="kpi-card__title">План на 10–14 дней</div>
             </div>
 
             <div class="kpi-grid">
               <div class="kpi">
-                <div class="kpi__num" data-count="20" data-suffix=" мин">0</div>
+                <div class="kpi__num">20 мин</div>
                 <div class="kpi__label">длительность</div>
               </div>
               <div class="kpi">
-                <div class="kpi__num" data-count="5" data-suffix="–10">0</div>
+                <div class="kpi__num">6–10</div>
                 <div class="kpi__label">гипотез роста</div>
               </div>
               <div class="kpi">
-                <div class="kpi__num" data-count="7" data-suffix="–14">0</div>
+                <div class="kpi__num">7–14</div>
                 <div class="kpi__label">дней до выводов</div>
               </div>
               <div class="kpi">
-                <div class="kpi__num" data-count="3" data-suffix="+">0</div>
+                <div class="kpi__num">2–4</div>
                 <div class="kpi__label">канала в миксе</div>
               </div>
             </div>
 
-            <div class="kpi-card__note">
-              Я продаю не “клики”, а управляемые цифры и качество лидов.
-            </div>
+            <p class="kpi-card__note">
+              Я продаю не «клики», а управляемые цифры: качество лидов, конверсия в созвон и понятный план масштабирования.
+            </p>
           </div>
-        </div>
+        </aside>
       </div>
+
+      <div class="divider divider--hero" aria-hidden="true"></div>
     </section>
 
     <!-- PROOF -->
-    <section id="proof" class="section section--tight reveal">
+    <section class="section reveal" id="proof" data-section-label="Подход">
       <div class="container">
-        <div class="cards3">
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">KPI</div>
+        <div class="section__head">
+          <div class="eyebrow">ПОДХОД</div>
+          <h2 class="h2">Системно. Прозрачно. С контролем качества.</h2>
+          <p class="muted">Чтобы вы понимали, что работает — и могли масштабироваться без хаоса.</p>
+        </div>
+
+        <div class="grid3">
+          <div class="glass card hoverfx">
+            <div class="card__top">
+              <span class="icon">KPI</span>
+              <span class="tag">до старта</span>
+            </div>
             <div class="card__title">KPI до старта</div>
-            <div class="card__text">Сразу фиксируем, какие цифры считаем нормой по качеству и цене.</div>
+            <div class="card__text">Фиксируем, какие цифры считаем нормой по качеству и цене.</div>
           </div>
 
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">TEST</div>
+          <div class="glass card hoverfx">
+            <div class="card__top">
+              <span class="icon">TEST</span>
+              <span class="tag">по плану</span>
+            </div>
             <div class="card__title">Тесты по системе</div>
-            <div class="card__text">Гипотезы — по плану. Оставляем сильное, выключаем слабое.</div>
+            <div class="card__text">Гипотезы — по матрице. Оставляем сильное, выключаем слабое.</div>
           </div>
 
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">INFO</div>
-            <div class="card__title">Фокус: инфобизнес</div>
+          <div class="glass card hoverfx">
+            <div class="card__top">
+              <span class="icon">INFO</span>
+              <span class="tag">фокус</span>
+            </div>
+            <div class="card__title">Только инфобиз</div>
             <div class="card__text">Запуски, автоворонки, догрев, допродажи — знаю специфику.</div>
           </div>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- HOWTO -->
-    <section id="howto" class="section reveal">
+    <section class="section reveal" id="howto" data-section-label="Как попасть">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">ПУТЬ</div>
@@ -173,15 +206,15 @@
         </div>
 
         <div class="steps">
-          <div class="step">
+          <div class="glass step hoverfx">
             <div class="step__n">01</div>
             <div class="step__t">Нажмите «Получить strategy-сессию»</div>
           </div>
-          <div class="step">
+          <div class="glass step hoverfx">
             <div class="step__n">02</div>
             <div class="step__t">Напишите в Telegram слово <b>«СТРАТЕГИЯ»</b></div>
           </div>
-          <div class="step">
+          <div class="glass step hoverfx">
             <div class="step__n">03</div>
             <div class="step__t">Я задам 5 вопросов и предложу время</div>
           </div>
@@ -191,10 +224,11 @@
           Если пойму, что кейс не мой — скажу сразу и дам рекомендации.
         </p>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- BENEFITS -->
-    <section id="benefits" class="section reveal">
+    <section class="section reveal" id="benefits" data-section-label="Результат">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">РЕЗУЛЬТАТ</div>
@@ -202,24 +236,25 @@
           <p class="muted">Коротко и по делу — без воды и “волшебных обещаний”.</p>
         </div>
 
-        <div class="cards2">
-          <div class="card card--big">
+        <div class="grid2">
+          <div class="glass card card--big hoverfx">
             <div class="card__title">Диагностика</div>
             <div class="card__text">Карта воронки и точки потерь: где теряются деньги и почему лиды “не те”.</div>
-            <div class="card__meta">Воронка • точки потерь • качество</div>
+            <div class="meta">воронка • точки потерь • качество</div>
           </div>
 
-          <div class="card card--big">
+          <div class="glass card card--big hoverfx">
             <div class="card__title">План на 10–14 дней</div>
-            <div class="card__text">Что запускаем, какие KPI смотрим, 5–10 гипотез роста и первые шаги по улучшению конверсии.</div>
-            <div class="card__meta">Офферы • креативы • сегменты • догрев</div>
+            <div class="card__text">Что запускаем, какие KPI смотрим, 6–10 гипотез роста и первые шаги по улучшению конверсии.</div>
+            <div class="meta">офферы • креативы • сегменты • догрев</div>
           </div>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- FIT -->
-    <section id="fit" class="section reveal">
+    <section class="section reveal" id="fit" data-section-label="Фильтр">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">ФИЛЬТР</div>
@@ -227,8 +262,8 @@
           <p class="muted">Чтобы сэкономить время и вам, и мне — коротко обозначу рамки.</p>
         </div>
 
-        <div class="fit">
-          <div class="card card--list">
+        <div class="grid2">
+          <div class="glass card card--list hoverfx">
             <div class="card__title">✅ Подходит, если</div>
             <ul class="list">
               <li>есть продукт и понятный чек</li>
@@ -237,7 +272,7 @@
             </ul>
           </div>
 
-          <div class="card card--list">
+          <div class="glass card card--list hoverfx">
             <div class="card__title">❌ Не подойдёт, если</div>
             <ul class="list">
               <li>нет продукта/оффера или “пока непонятно, что продаём”</li>
@@ -247,10 +282,11 @@
           </div>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- QUALITY -->
-    <section id="quality" class="section reveal">
+    <section class="section reveal" id="quality" data-section-label="Качество">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">КАЧЕСТВО</div>
@@ -258,27 +294,36 @@
           <p class="muted">Не “лью трафик”. Настраиваю систему, где качество видно по этапам.</p>
         </div>
 
-        <div class="cards3">
-          <div class="card">
+        <div class="grid3">
+          <div class="glass card hoverfx">
             <div class="card__title">Фильтрация входа</div>
             <div class="card__text">Отсеиваем “случайных”, повышаем долю целевых.</div>
           </div>
-
-          <div class="card">
+          <div class="glass card hoverfx">
             <div class="card__title">Измерение по этапам</div>
             <div class="card__text">Понимаем, где проседает: заявка → квалификация → созвон → оплата.</div>
           </div>
-
-          <div class="card">
+          <div class="glass card hoverfx">
             <div class="card__title">Связка с продажами</div>
             <div class="card__text">Корректируем офферы/креативы по реальному фидбеку, а не по ощущениям.</div>
           </div>
         </div>
+
+        <div class="mini-kpi glass hoverfx">
+          <div class="mini-kpi__label">Ключевые KPI, которые держу в фокусе:</div>
+          <div class="mini-kpi__chips">
+            <span class="chip">Квал-лид</span>
+            <span class="chip">Созвон</span>
+            <span class="chip">Оплата</span>
+            <span class="chip">CPL/качество</span>
+          </div>
+        </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- MISTAKES -->
-    <section id="mistakes" class="section reveal">
+    <section class="section reveal" id="mistakes" data-section-label="Ошибки">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">ОШИБКИ</div>
@@ -286,27 +331,26 @@
           <p class="muted">Это то, из-за чего обычно “льётся, но не продаётся”.</p>
         </div>
 
-        <div class="cards3">
-          <div class="card">
+        <div class="grid3">
+          <div class="glass card hoverfx">
             <div class="card__title">Лиды есть — продаж нет</div>
             <div class="card__text">Настраиваю измерение и оптимизацию под качество, а не под “клики”.</div>
           </div>
-
-          <div class="card">
+          <div class="glass card hoverfx">
             <div class="card__title">Оффер размытый</div>
             <div class="card__text">Собираю 2–4 оффера под сегменты, чтобы сообщение попадало в боль.</div>
           </div>
-
-          <div class="card">
+          <div class="glass card hoverfx">
             <div class="card__title">Тёплых не дожимают</div>
             <div class="card__text">Собираю догрев и ретаргет по поведению — деньги возвращаются из повторных касаний.</div>
           </div>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about" class="section reveal">
+    <section class="section reveal" id="about" data-section-label="Обо мне">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">ОБО МНЕ</div>
@@ -314,40 +358,204 @@
         </div>
 
         <div class="about">
-          <div class="about__text">
-            Я — <b>Никита Васильев</b>, 4+ года в performance-маркетинге. Работаю <b>только с инфобизнесом</b>.
-            Строю управляемую систему привлечения: KPI (по каким цифрам понимаем, что всё ок), измерение,
-            тесты и контроль качества лидов. Цель — стабильный поток заявок и масштабирование без “слива”.
+          <div class="glass about__main hoverfx">
+            <p class="about__text">
+              Я — <b>Никита Васильев</b>, 4+ года в performance-маркетинге. Работаю <b>только с инфобизнесом</b>.
+              Строю управляемую систему привлечения: KPI (по каким цифрам понимаем, что всё ок), измерение,
+              тесты и контроль качества лидов. Цель — стабильный поток заявок и масштабирование без “слива”.
+            </p>
           </div>
 
-          <div class="about__aside">
-            <div class="pill">VK Ads • Яндекс • Telegram • Авито</div>
-            <div class="pill">KPI → гипотеза → тест → вывод → масштаб</div>
-            <div class="pill">Ограниченно беру проекты: 1–3 одновременно</div>
+          <div class="about__side">
+            <div class="glass pill hoverfx">VK Ads • Яндекс • Telegram • Авито</div>
+            <div class="glass pill hoverfx">Данные → гипотеза → тест → вывод → масштаб</div>
+            <div class="glass pill hoverfx">Ограниченно беру проекты: 1–3 одновременно</div>
           </div>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- CASES -->
-    <section id="cases" class="section reveal">
+    <section class="section reveal" id="cases" data-section-label="Кейсы">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">КЕЙСЫ</div>
           <h2 class="h2">Кейсы</h2>
-          <p class="muted">
-            Кейсы обезличены (NDA). Цифры округлены. Внутри — что было, что сделал, почему сработало.
-          </p>
+          <p class="muted">Кейсы обезличены (NDA). Цифры округлены. Внутри — что было, что сделал, почему сработало.</p>
         </div>
 
-        <div class="acc-wrap">
-          <!-- ... кейсы (как в файле) ... -->
+        <div class="accordion">
+          <!-- Case 1 -->
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Вебинарный запуск: стабилизация и масштаб без хаоса</div>
+                <div class="acc__chips">
+                  <span class="chip">VK Ads</span>
+                  <span class="chip">Яндекс Директ</span>
+                  <span class="chip">Ретаргет</span>
+                </div>
+              </div>
+              <div class="acc__kpis">
+                <div class="tile"><div class="tile__v">520</div><div class="tile__k">регистраций</div></div>
+                <div class="tile"><div class="tile__v">410 ₽</div><div class="tile__k">CPL (−41%)</div></div>
+                <div class="tile"><div class="tile__v">86</div><div class="tile__k">заявок</div></div>
+                <div class="tile"><div class="tile__v">2,4 млн ₽</div><div class="tile__k">выручка</div></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              <p><b>Контекст:</b> запуск “прыгал” по цифрам — то дешёвые лиды, то в 2 раза дороже. Команда металась между креативами и аудиториями, но не понимала, <b>что именно даёт результат</b>.</p>
+              <p>Я начал с базового: зафиксировал <b>KPI и контрольные точки</b> (регистрация → заявка → квалификация), расставил измерение и пересобрал структуру кампаний, чтобы каждый сегмент давал понятный вклад. Далее — собрал <b>матрицу креативов</b> (оффер × аудитория × формат) и за 10–12 дней прокрутил серии тестов вместо хаотичных “попробуем ещё вот это”.</p>
+              <p>Ключевой момент — подключил ретаргет по поведению: отдельно догоняли тёплых, отдельно — сомневающихся, отдельно — тех, кто был близко к заявке, но не сделал шаг.</p>
+              <div class="callout">
+                <div class="callout__t">Итог</div>
+                <div class="callout__p">520 регистраций, <b>CPL 410 ₽ (−41%)</b>, 86 заявок и <b>2,4 млн ₽</b> выручки. Запуск стал управляемым: понятно, что масштабировать и что отключать без эмоций.</div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Case 2 -->
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Автоворонка в Telegram: заявки каждый день</div>
+                <div class="acc__chips">
+                  <span class="chip">Telegram</span>
+                  <span class="chip">VK догрев</span>
+                  <span class="chip">Ретаргет</span>
+                </div>
+              </div>
+              <div class="acc__kpis">
+                <div class="tile"><div class="tile__v">140</div><div class="tile__k">квал. заявок</div></div>
+                <div class="tile"><div class="tile__v">820 ₽</div><div class="tile__k">цена квалида</div></div>
+                <div class="tile"><div class="tile__v">34%</div><div class="tile__k">квал→созвон</div></div>
+                <div class="tile"><div class="tile__v">4–6</div><div class="tile__k">созвонов/день</div></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              <p><b>Задача:</b> уйти от зависимости “то запуск, то тишина” и сделать поток заявок ежедневным.</p>
+              <p>Я собрал связку: трафик → быстрый фильтр/квалификация → прогрев в Telegram → ретаргет на тёплые сегменты. Мы перестали мерить успех “лидами” и начали считать <b>квалида</b> — человека, который подходит и готов к следующему шагу.</p>
+              <p>На тестах быстро стало видно, какие заходы дают конверсию, а какие создают активность “для отчёта”. Я оставил только то, что приводит к созвонам — и убрал всё остальное.</p>
+              <div class="callout">
+                <div class="callout__t">Итог</div>
+                <div class="callout__p">140 квалифицированных заявок, <b>820 ₽ за квалида</b>, <b>34% квал→созвон</b>, стабильные <b>4–6 созвонов/день</b>. Появилась предсказуемость.</div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Case 3 -->
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Допродажи по базе: деньги в повторных касаниях</div>
+                <div class="acc__chips">
+                  <span class="chip">VK Ads</span>
+                  <span class="chip">Telegram</span>
+                  <span class="chip">Ретаргет</span>
+                </div>
+              </div>
+              <div class="acc__kpis">
+                <div class="tile"><div class="tile__v">−27%</div><div class="tile__k">CPL</div></div>
+                <div class="tile"><div class="tile__v">+22%</div><div class="tile__k">CR</div></div>
+                <div class="tile"><div class="tile__v">+31%</div><div class="tile__k">повт. касания</div></div>
+                <div class="tile"><div class="tile__v">1,6 млн ₽</div><div class="tile__k">выручка</div></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              <p><b>Ситуация:</b> база есть, но она работала как “архив”. Деньги лежали прямо в подписчиках/CRM, но системного дожима не было.</p>
+              <p>Я разделил аудиторию по поведению (кто был на вебинаре, кто оставлял заявку, кто “почти купил”) и под каждый сегмент сделал отдельный оффер и сообщение — без универсального “купите курс”. Параллельно запустил A/B тесты подач: где лучше через кейсы, где через пользу, где через разбор.</p>
+              <p>Ретаргет собрали не “на всех подряд”, а на конкретные действия и этапы прогрева, чтобы каждый показ имел смысл.</p>
+              <div class="callout">
+                <div class="callout__t">Итог</div>
+                <div class="callout__p"><b>CPL −27%</b>, <b>CR +22%</b>, повторные касания <b>+31%</b> и <b>1,6 млн ₽</b> выручки. База стала активом, а не архивом.</div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Case 4 -->
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Холодный трафик на консультации: качество важнее количества</div>
+                <div class="acc__chips">
+                  <span class="chip">Яндекс Директ</span>
+                  <span class="chip">VK Ads</span>
+                  <span class="chip">Квал-фильтр</span>
+                </div>
+              </div>
+              <div class="acc__kpis">
+                <div class="tile"><div class="tile__v">92</div><div class="tile__k">квал. заявки</div></div>
+                <div class="tile"><div class="tile__v">1 350 ₽</div><div class="tile__k">квал</div></div>
+                <div class="tile"><div class="tile__v">41%</div><div class="tile__k">в созвон</div></div>
+                <div class="tile"><div class="tile__v">38</div><div class="tile__k">оплат</div></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              <p><b>Запрос:</b> high-ticket — нужны не “любые лиды”, а люди, которые реально подходят и готовы к разговору.</p>
+              <p>Я усилил фильтрацию: убрали формулировки, которые притягивали “поглазеть”, и пересобрали сообщения так, чтобы они сразу отсекали слабое намерение. В Яндексе усилил сбор спроса, в VK добавил сегменты под тёплых и похожих, а ретаргет настроил на тех, кто реально проявляет интерес.</p>
+              <p>Оптимизация шла не по “цене лида”, а по <b>цене квалида</b> и <b>конверсии в созвон</b> — это быстро вывело систему в здоровую экономику.</p>
+              <div class="callout">
+                <div class="callout__t">Итог</div>
+                <div class="callout__p">92 квалифицированные заявки, <b>1 350 ₽ за квалида</b>, <b>41% в созвон</b>, <b>38 оплат</b>. Стабильное качество без перегруза отдела продаж.</div>
+              </div>
+            </div>
+          </details>
+
+          <!-- Case 5 -->
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Перезапуск после “слива”: вернул управляемость</div>
+                <div class="acc__chips">
+                  <span class="chip">VK Ads</span>
+                  <span class="chip">Яндекс</span>
+                  <span class="chip">Ретаргет</span>
+                </div>
+              </div>
+              <div class="acc__kpis">
+                <div class="tile"><div class="tile__v">−35%</div><div class="tile__k">CPL</div></div>
+                <div class="tile"><div class="tile__v">+48%</div><div class="tile__k">лиды</div></div>
+                <div class="tile"><div class="tile__v">стабильно</div><div class="tile__k">качество</div></div>
+                <div class="tile"><div class="tile__v">30 дней</div><div class="tile__k">план</div></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              <p><b>Ситуация:</b> “сливали бюджет, устали, ничего не понятно”. Кампании разрослись, аудитории пересекались, креативы выгорали, метрик качества не было — поэтому любое решение было “угадайкой”.</p>
+
+              <div class="ba">
+                <div class="ba__col">
+                  <div class="ba__t">Было</div>
+                  <ul class="list list--compact">
+                    <li>хаос в структуре и пересечения аудиторий</li>
+                    <li>нет событий/меток → непонятно, что работает</li>
+                    <li>выгорание креативов и частота</li>
+                  </ul>
+                </div>
+                <div class="ba__col">
+                  <div class="ba__t">Стало</div>
+                  <ul class="list list--compact">
+                    <li>KPI и измерение качества по этапам</li>
+                    <li>план тестов вместо хаоса</li>
+                    <li>ретаргет по поведению + догрев</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p>Я пересобрал кабинеты, развёл аудитории, настроил события/метки, ввёл контроль частоты и ротацию креативов. Собрал матрицу тестов и план на 30 дней: что тестируем, в какой очередности, какие KPI считаем “проходными”.</p>
+              <div class="callout">
+                <div class="callout__t">Итог</div>
+                <div class="callout__p"><b>CPL −35%</b>, лиды <b>+48%</b>, качество стабильно и понятный <b>план на 30 дней</b> для роста.</div>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- PROCESS -->
-    <section id="process" class="section reveal">
+    <section class="section reveal" id="process" data-section-label="Процесс">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">ПРОЦЕСС</div>
@@ -356,34 +564,37 @@
         </div>
 
         <div class="steps steps--wide">
-          <div class="step">
+          <div class="glass step hoverfx">
             <div class="step__n">01</div>
-            <div class="step__t"><b>Диагностика и KPI</b><br/>Фиксируем цель, цифры качества и воронку: что измеряем и где теряем.</div>
+            <div class="step__t"><b>Диагностика и KPI</b><br />Фиксируем цель, цифры качества и воронку: что измеряем и где теряем.</div>
           </div>
-          <div class="step">
+          <div class="glass step hoverfx">
             <div class="step__n">02</div>
-            <div class="step__t"><b>Тест 10–14 дней</b><br/>Запускаем гипотезы по офферу/креативам/сегментам. Отбираем сильное.</div>
+            <div class="step__t"><b>Тест 10–14 дней</b><br />Запускаем гипотезы по офферу/креативам/сегментам. Отбираем сильное.</div>
           </div>
-          <div class="step">
+          <div class="glass step hoverfx">
             <div class="step__n">03</div>
-            <div class="step__t"><b>Рост и масштабирование</b><br/>Усиливаем победителей, собираем ретаргет и догрев, стабилизируем результат.</div>
+            <div class="step__t"><b>Рост и масштабирование</b><br />Усиливаем победителей, собираем ретаргет и догрев, стабилизируем результат.</div>
           </div>
         </div>
 
-        <div class="cta-block">
+        <div class="cta-block glass hoverfx">
           <div class="cta-block__text">
             <div class="cta-block__title">Готовы сделать заявки управляемыми?</div>
             <div class="cta-block__muted">Нажмите кнопку и напишите <b>«СТРАТЕГИЯ»</b> — разберём воронку и дам план первых шагов.</div>
           </div>
-          <a class="btn btn--primary magnetic" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%20%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%2F%D1%87%D0%B5%D0%BA%3A%20%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%3A%20" target="_blank" rel="noopener">
+          <a class="btn btn--primary magnetic"
+             href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%20%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%2F%D1%87%D0%B5%D0%BA%3A%20%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%3A%20"
+             target="_blank" rel="noopener">
             Получить strategy-сессию
           </a>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- STACK -->
-    <section id="stack" class="section reveal">
+    <section class="section reveal" id="stack" data-section-label="Стек">
       <div class="container">
         <div class="section__head">
           <div class="eyebrow">СТЕК</div>
@@ -392,36 +603,153 @@
         </div>
 
         <div class="chips" role="tablist" aria-label="Инструменты">
-          <!-- ... интерактивные чипы (как в файле) ... -->
+          <button class="chipbtn is-active" data-chip="vk" type="button">VK Ads</button>
+          <button class="chipbtn" data-chip="yandex" type="button">Яндекс Директ</button>
+          <button class="chipbtn" data-chip="tg" type="button">Telegram</button>
+          <button class="chipbtn" data-chip="avito" type="button">Авито</button>
+          <button class="chipbtn" data-chip="rt" type="button">Ретаргет</button>
+          <button class="chipbtn" data-chip="events" type="button">Метки/события</button>
+          <button class="chipbtn" data-chip="ab" type="button">A/B тесты</button>
+          <button class="chipbtn" data-chip="matrix" type="button">Матрица креативов</button>
         </div>
 
-        <div class="chip-panel" role="status" aria-live="polite">
+        <div class="glass chip-panel hoverfx" role="status" aria-live="polite">
           <div class="chip-panel__label">Зачем это:</div>
           <div class="chip-panel__text" data-chip-panel>Холодный трафик + ретаргет, масштабирование через тесты связок.</div>
         </div>
       </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section reveal">
-      <!-- ... FAQ (как в файле) ... -->
+    <section class="section reveal" id="faq" data-section-label="FAQ">
+      <div class="container">
+        <div class="section__head">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="h2">Частые вопросы</h2>
+          <p class="muted">Коротко и по делу.</p>
+        </div>
+
+        <div class="accordion">
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">С кем вы работаете?</div>
+                <div class="acc__chips"><span class="chip">только инфобиз</span></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              Онлайн-школы, эксперты, продюсеры. Беру проекты, где можно построить систему и контролировать качество.
+            </div>
+          </details>
+
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Какие каналы используете?</div>
+                <div class="acc__chips"><span class="chip">микс</span></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              VK Ads, Яндекс Директ, Telegram (прогрев), Авито + ретаргет — под задачу, продукт и воронку.
+            </div>
+          </details>
+
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Когда появятся первые цифры?</div>
+                <div class="acc__chips"><span class="chip">7–14 дней</span></div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              Обычно первые выводы появляются за 7–14 дней — это нормальный цикл теста, чтобы не делать выводы по случайности.
+            </div>
+          </details>
+
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Вы занимаетесь только рекламой?</div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              Нет. Трафик + измерение + качество лидов + рекомендации по обработке и догреву. Цель — управляемый результат.
+            </div>
+          </details>
+
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Что нужно от нас для старта?</div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              Продукт/оффер, материалы/ссылки, доступы, кто обрабатывает заявки, цель на 14 дней и быстрый фидбек по качеству.
+            </div>
+          </details>
+
+          <details class="glass acc hoverfx">
+            <summary>
+              <div class="acc__left">
+                <div class="acc__title">Сколько стоит работа?</div>
+              </div>
+            </summary>
+            <div class="acc__body">
+              Стоимость зависит от задачи и объёма работ. Обсуждаю после strategy-сессии, когда понятен план.
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="divider" aria-hidden="true"></div>
     </section>
 
-    <!-- TG -->
-    <section id="tg" class="section section--last reveal">
-      <!-- ... финальный CTA (как в файле) ... -->
+    <!-- TG / FINAL CTA -->
+    <section class="section section--last reveal" id="tg" data-section-label="TG">
+      <div class="container">
+        <div class="final glass hoverfx">
+          <div class="final__left">
+            <div class="eyebrow">СВЯЗЬ</div>
+            <h2 class="h2">Напишите «СТРАТЕГИЯ» — и я предложу время</h2>
+            <p class="muted">20 минут. Бесплатно. Разберём воронку и составлю план первых шагов на 10–14 дней.</p>
+
+            <div class="final__meta">
+              <span class="badge">Ответ по делу</span>
+              <span class="badge badge--muted">Без обещаний “10х за неделю”</span>
+              <span class="badge badge--muted">Фокус на качестве</span>
+            </div>
+          </div>
+
+          <div class="final__right">
+            <a class="btn btn--primary btn--lg magnetic"
+               href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)%0A%D0%9D%D0%B8%D1%88%D0%B0%3A%20%0A%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%2F%D1%87%D0%B5%D0%BA%3A%20%0A%D0%A6%D0%B5%D0%BB%D1%8C%20%D0%BD%D0%B0%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%3A%20"
+               target="_blank" rel="noopener">
+              Получить strategy-сессию
+            </a>
+            <a class="btn btn--ghost btn--lg magnetic" href="https://t.me/vasilieeev11" target="_blank" rel="noopener">
+              Открыть Telegram
+            </a>
+
+            <div class="contact">
+              <div class="contact__k">Telegram</div>
+              <div class="contact__v">@Vasilieeev11</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footerline">
+          <div class="muted">© <span id="y"></span> Никита Васильев</div>
+          <div class="muted">GitHub Pages • Manrope • Premium dark</div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__row">
-      <div class="muted">© <span id="y"></span> Никита Васильев</div>
-      <div class="muted">GitHub Pages • Manrope • Premium dark</div>
-    </div>
-  </footer>
-
   <!-- Mobile sticky CTA -->
-  <a class="sticky-cta magnetic" aria-label="Получить strategy-сессию" href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)" target="_blank" rel="noopener">
+  <a class="sticky-cta magnetic"
+     aria-label="Получить strategy-сессию"
+     href="https://t.me/vasilieeev11?text=%D0%A1%D0%A2%D0%A0%D0%90%D0%A2%D0%95%D0%93%D0%98%D0%AF%20(LP)"
+     target="_blank" rel="noopener">
     <span class="sticky-cta__btn">Получить strategy-сессию</span>
     <span class="sticky-cta__hint">20 минут • бесплатно • «СТРАТЕГИЯ»</span>
   </a>
