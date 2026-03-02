@@ -1,5 +1,6 @@
 /* =========================
    Premium Dark — Nikita V.
+   + iOS Safari ghost-line fixes
    ========================= */
 
 :root{
@@ -94,6 +95,7 @@ b{font-weight:700}
   height: 3px;
   background: rgba(255,255,255,.06);
   z-index: 1200;
+  contain: paint; /* iOS fix */
 }
 .progress__bar{
   height:100%;
@@ -101,6 +103,7 @@ b{font-weight:700}
   background: linear-gradient(90deg, rgba(154,230,255,1), rgba(186,124,255,1));
   box-shadow: 0 0 18px rgba(154,230,255,.35);
   transform-origin:left center;
+  contain: paint; /* iOS fix */
 }
 
 .progress-pill{
@@ -380,8 +383,6 @@ b{font-weight:700}
   box-shadow: var(--shadow2);
   overflow: hidden;
 }
-
-/* Specular highlight (mouse-follow) */
 .glass::before{
   content:"";
   position:absolute;
@@ -422,10 +423,7 @@ b{font-weight:700}
    Hero
    ========================= */
 
-.hero{
-  padding-top: 96px;
-  padding-bottom: 0;
-}
+.hero{ padding-top: 96px; padding-bottom: 0; }
 .hero__grid{
   display:grid;
   grid-template-columns: 1.18fr .82fr;
@@ -595,7 +593,6 @@ b{font-weight:700}
   grid-template-columns: repeat(3, 1fr);
   gap: var(--g);
 }
-.steps--wide{ grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 980px){ .steps{ grid-template-columns: 1fr; } }
 .step{ padding: 18px; }
 .step__n{
@@ -621,7 +618,6 @@ b{font-weight:700}
 .list li{ margin: 8px 0; }
 .list--compact li{ margin: 6px 0; }
 
-/* Mini KPI line */
 .mini-kpi{
   margin-top: 18px;
   padding: 16px 18px;
@@ -703,15 +699,9 @@ b{font-weight:700}
 .about__side{ display:flex; flex-direction:column; gap: 12px; }
 .pill{ padding: 14px 16px; font-size: 13px; color: rgba(255,255,255,.78); }
 
-/* =========================
-   Accordion / cases
-   ========================= */
+/* Accordion */
+.accordion{ display:flex; flex-direction:column; gap: 12px; }
 
-.accordion{
-  display:flex;
-  flex-direction:column;
-  gap: 12px;
-}
 .acc summary{
   list-style:none;
   cursor:pointer;
@@ -765,7 +755,7 @@ b{font-weight:700}
   letter-spacing: .02em;
 }
 
-/* details divider line only when open */
+/* body visible only when open */
 .acc .acc__body{
   padding: 0 18px 18px;
   border-top: 1px solid rgba(255,255,255,.10);
@@ -798,7 +788,6 @@ b{font-weight:700}
   line-height: 1.7;
 }
 
-/* Before / After */
 .ba{
   margin: 14px 0;
   display:grid;
@@ -817,10 +806,6 @@ b{font-weight:700}
   letter-spacing: -.01em;
   margin-bottom: 8px;
 }
-
-/* =========================
-   Process CTA / Final
-   ========================= */
 
 .cta-block{
   margin-top: 18px;
@@ -879,10 +864,7 @@ b{font-weight:700}
   font-size: 12px;
 }
 
-/* =========================
-   Sticky CTA (mobile)
-   ========================= */
-
+/* Sticky CTA */
 .sticky-cta{
   position: fixed;
   left: 14px;
@@ -902,10 +884,7 @@ b{font-weight:700}
 .sticky-cta__hint{ display:block; margin-top: 6px; font-size: 12px; color: rgba(255,255,255,.72); }
 @media (max-width: 920px){ .sticky-cta{ display:block; } }
 
-/* =========================
-   Reveal + anchors
-   ========================= */
-
+/* Reveal */
 .reveal{
   opacity: 0;
   transform: translateY(14px);
@@ -922,14 +901,52 @@ b{font-weight:700}
 
 :target{ scroll-margin-top: 90px; }
 
-/* Prevent overflow */
 .acc__title, .card__title, .h1, .h2, .lead, .acc__body, .chipbtn{
   overflow-wrap: anywhere;
   word-break: normal;
 }
 
-/* Small mobile polish */
 @media (max-width: 420px){
   .btn{ width: 100%; }
   .hero__cta{ flex-direction:column; }
 }
+
+/* =========================================================
+   ✅ iOS Safari FIXES — “ghost lines” / “stuck seams” on scroll
+   (Most stable setup)
+   ========================================================= */
+
+@supports (-webkit-touch-callout: none) {
+  .header,
+  .progress,
+  .progress__bar,
+  .progress-pill,
+  .sticky-cta,
+  .grain,
+  .cursor-glow,
+  .divider,
+  .glass {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  /* Самый частый источник “залипаний” — тонкий 1px divider.
+     Самое стабильное решение: скрыть dividers на iOS. */
+  .divider { display: none; }
+
+  /* Grain (mix-blend-mode) иногда оставляет следы — упрощаем на iOS */
+  .grain{
+    mix-blend-mode: normal;
+    opacity: .06;
+  }
+}
+
+/* Если хочешь оставить dividers на iOS — удали .divider {display:none;}
+   и раскомментируй это:
+@supports (-webkit-touch-callout: none) {
+  .divider { display:block; height:2px; opacity:.55; }
+}
+*/
