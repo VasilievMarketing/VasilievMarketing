@@ -912,33 +912,26 @@ b{font-weight:700}
 }
 
 /* =========================================================
-   ✅ iOS Safari FIXES — “ghost lines” / “stuck seams” on scroll
-   (Most stable setup)
-   ========================================================= */
-/* =========================================================
-   ✅ iOS Safari FIXES — “ghost lines” / “stuck seams” on scroll
-   Самый стабильный вариант: убираем backdrop-filter + псевдо-слои
+   ✅ iOS Safari ULTIMATE FIX — убираем “следы” при скролле
+   Причина: filter/blur + большие тени + fixed overlays
    ========================================================= */
 
 @supports (-webkit-touch-callout: none) {
-  /* 1) Принудительно отдельные слои */
-  .header,
-  .progress,
-  .progress__bar,
-  .progress-pill,
-  .sticky-cta,
-  .grain,
+
+  /* 1) Отключаем тяжелые overlay-слои (они чаще всего оставляют "шлейф") */
   .cursor-glow,
-  .glass,
+  .grain,
+  .hero__bg,
   .orb {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    will-change: transform;
+    display: none !important;
   }
 
-  /* 2) Убираем главного виновника: blur-стекло */
+  /* 2) Упрощаем фон (градиенты иногда дают полосы на iOS при композитинге) */
+  body {
+    background: linear-gradient(180deg, #0b0c10, #07070a) !important;
+  }
+
+  /* 3) Убираем blur и псевдо-слои у стекла (даже если где-то остались) */
   .glass,
   .header,
   .sticky-cta,
@@ -946,34 +939,40 @@ b{font-weight:700}
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
   }
-
-  /* 3) Убираем псевдо-слои на стекле (они часто оставляют "швы") */
   .glass::before,
   .glass::after {
     display: none !important;
   }
 
-  /* 4) Делаем “премиум стекло” без blur: плотный фон + мягкий градиент */
+  /* 4) Главный фикс: уменьшаем/убираем большие тени (они "залипают") */
+  .glass,
+  .tile,
+  .kpi,
+  .sticky-cta,
+  .progress-pill,
+  .header {
+    box-shadow: none !important;
+  }
+
+  /* 5) Вместо теней — аккуратная премиум-обводка и мягкий фон */
   .glass {
-    background: linear-gradient(
-      180deg,
-      rgba(255,255,255,.075),
-      rgba(255,255,255,.045)
-    ) !important;
-    border-color: rgba(255,255,255,.14) !important;
+    background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.045)) !important;
+    border: 1px solid rgba(255,255,255,.16) !important;
+  }
+  .tile, .kpi {
+    background: rgba(255,255,255,.04) !important;
+    border: 1px solid rgba(255,255,255,.12) !important;
   }
 
-  /* 5) Grain: упрощаем (mix-blend-mode иногда даёт артефакты) */
-  .grain{
-    mix-blend-mode: normal !important;
-    opacity: .05 !important;
-  }
-
-  /* 6) Самый частый источник линий — 1px разделители. Отключаем на iOS */
+  /* 6) Dividers отключаем на iOS (1px линии почти всегда “призрачат”) */
   .divider { display: none !important; }
 
-  /* 7) На всякий: фикс “линий” внутри элементов с радиусом */
-  .glass {
-    background-clip: padding-box;
+  /* 7) Принудительно стабилизируем рендер */
+  .glass, .tile, .kpi, .header, .sticky-cta, .progress, .progress__bar {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 }
+   
