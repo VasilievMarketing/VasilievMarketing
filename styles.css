@@ -975,4 +975,13 @@ b{font-weight:700}
     backface-visibility: hidden;
   }
 }
-   
+
+/* Disable liquid-glass highlight on mobile */
+@media (max-width: 920px) {
+  .glass::before { display: none !important; }
+}
+
+/* Extra: iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .glass::before { display: none !important; }
+}
